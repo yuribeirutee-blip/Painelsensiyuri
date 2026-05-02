@@ -4,79 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="background-color: #000; margin: 0; display: flex; justify-content: center;">
+<body style="background-color: #000; margin: 0; display: flex; justify-content: center; padding: 10px;">
 
-<div id="painel-sensi" style="background: #0d0d0d; color: #fff; padding: 25px; border-radius: 20px; font-family: 'Segoe UI', sans-serif; max-width: 400px; border: 3px solid #00ff00; box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); text-align: center; width: 100%;">
+<div id="painel-sensi" style="background: #0a0a0a; color: #fff; padding: 25px; border-radius: 15px; font-family: 'Arial', sans-serif; max-width: 400px; border: 2px solid #ff0055; box-shadow: 0 0 15px rgba(255, 0, 85, 0.3); text-align: center; width: 100%;">
     
-    <h1 style="font-size: 24px; color: #00ff00; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">🎯 SENSI VIP YURI</h1>
-    <p style="font-size: 13px; color: #888; margin-bottom: 25px;">A melhor DPI para Webcord está aqui!</p>
+    <h1 style="font-size: 22px; color: #ff0055; text-transform: uppercase; margin-bottom: 5px; font-style: italic;">⚡ LITE OPTIMIZER FF</h1>
+    <p style="font-size: 12px; color: #666; margin-bottom: 20px;">ESTABILIZADOR DE FPS & TOUCH</p>
     
-    <div style="margin-bottom: 25px;">
-        <select id="select-celular" onchange="atualizarPainel()" style="width: 100%; padding: 12px; background: #1a1a1a; color: #fff; border: 2px solid #333; border-radius: 10px; font-weight: bold; cursor: pointer; outline: none;">
-            <option value="">📱 SELECIONE SEU CELULAR</option>
-            <option value="iphone">IPHONE (TODOS)</option>
-            <option value="samsung">SAMSUNG</option>
-            <option value="xiaomi">XIAOMI / POCO</option>
-            <option value="motorola">MOTOROLA</option>
-            <option value="outros">OUTROS MODELOS</option>
+    <div style="background: #111; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #ff0055; text-align: left;">
+        <p style="font-size: 13px; margin: 5px 0;">🚀 <strong>STATUS:</strong> <span style="color: #00ff00;">SISTEMA ATIVO</span></p>
+        <p style="font-size: 13px; margin: 5px 0;">📉 <strong>INPUT LAG:</strong> <span style="color: #ff0055;">MÍNIMO DETECTADO</span></p>
+        <p style="font-size: 13px; margin: 5px 0;">🔋 <strong>BATERIA:</strong> <span style="color: #fff;">MODO PERFORMANCE</span></p>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <select id="select-otimizacao" onchange="ativarModo()" style="width: 100%; padding: 12px; background: #1a1a1a; color: #fff; border: 1px solid #ff0055; border-radius: 5px; font-weight: bold; cursor: pointer; outline: none;">
+            <option value="">⚙️ SELECIONE A FUNÇÃO</option>
+            <option value="fps">DESBLOQUEAR FPS (60/90)</option>
+            <option value="lag">REDUZIR ATRASO DO TOQUE</option>
+            <option value="limpeza">LIMPAR MEMÓRIA CACHE</option>
         </select>
     </div>
 
-    <div id="display-resultado" style="display: none; background: rgba(0, 255, 0, 0.05); padding: 20px; border-radius: 15px; border: 1px dashed #00ff00;">
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left;">
-            <div>
-                <span style="color: #888; font-size: 11px; text-transform: uppercase;">DPI</span><br>
-                <strong id="val-dpi" style="font-size: 18px; color: #fff;">-</strong>
-            </div>
-            <div>
-                <span style="color: #888; font-size: 11px; text-transform: uppercase;">GERAL</span><br>
-                <strong id="val-geral" style="font-size: 18px; color: #fff;">-</strong>
-            </div>
-            <div>
-                <span style="color: #888; font-size: 11px; text-transform: uppercase;">RED DOT</span><br>
-                <strong id="val-red" style="font-size: 18px; color: #fff;">-</strong>
-            </div>
-            <div>
-                <span style="color: #888; font-size: 11px; text-transform: uppercase;">MIRA 2X</span><br>
-                <strong id="val-2x" style="font-size: 18px; color: #fff;">-</strong>
-            </div>
+    <div id="status-box" style="display: none; background: rgba(255, 0, 85, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+        <p id="msg-status" style="font-size: 14px; color: #fff; font-weight: bold;"></p>
+        <div style="width: 100%; background: #222; height: 10px; border-radius: 5px; margin-top: 10px; overflow: hidden;">
+            <div id="bar" style="width: 0%; height: 100%; background: #ff0055; transition: width 1.5s;"></div>
         </div>
-
-        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
-        
-        <p style="font-size: 14px; color: #00ff00; margin-bottom: 10px; font-weight: bold;">💎 SENSI VIP: APENAS R$ 2,00</p>
-        <p style="font-size: 11px; color: #aaa; margin-bottom: 15px;">Abra um ticket para receber a sensi que não passa da cabeça!</p>
-        
-        <a href="https://discord.gg/U5fvUjYy4" target="_blank" style="display: block; background: #5865F2; color: white; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 10px rgba(88, 101, 242, 0.4);">
-            📩 COMPRAR NO DISCORD
-        </a>
     </div>
+
+    <p style="font-size: 12px; color: #888; margin-bottom: 15px;">Dúvidas ou Sugestões? Entre no nosso grupo:</p>
+    
+    <a href="https://discord.gg/U5fvUjYy4" target="_blank" style="display: block; background: #5865F2; color: #fff; text-decoration: none; padding: 15px; border-radius: 5px; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 10px rgba(88, 101, 242, 0.3);">
+        💬 COMUNIDADE NO DISCORD
+    </a>
 </div>
 
 <script>
-function atualizarPainel() {
-    const dispositivo = document.getElementById('select-celular').value;
-    const display = document.getElementById('display-resultado');
+function ativarModo() {
+    const modo = document.getElementById('select-otimizacao').value;
+    const box = document.getElementById('status-box');
+    const msg = document.getElementById('msg-status');
+    const bar = document.getElementById('bar');
     
-    // Configurações Grátis (Para o cara ver que funciona e querer o VIP)
-    const config = {
-        'iphone': {dpi: 'Padrão', geral: '98', red: '92', x2: '100'},
-        'samsung': {dpi: '600', geral: '95', red: '88', x2: '92'},
-        'xiaomi': {dpi: '720', geral: '92', red: '90', x2: '94'},
-        'motorola': {dpi: '580', geral: '100', red: '94', x2: '96'},
-        'outros': {dpi: '500', geral: '100', red: '100', x2: '100'}
-    };
-
-    if (dispositivo) {
-        const data = config[dispositivo];
-        document.getElementById('val-dpi').innerText = data.dpi;
-        document.getElementById('val-geral').innerText = data.geral;
-        document.getElementById('val-red').innerText = data.red;
-        document.getElementById('val-2x').innerText = data.x2;
-        display.style.display = 'block';
+    if(modo) {
+        box.style.display = 'block';
+        bar.style.width = '0%';
+        msg.innerText = 'PROCESSANDO...';
+        
+        setTimeout(() => {
+            bar.style.width = '100%';
+            if(modo === 'fps') msg.innerText = '🔥 FPS OTIMIZADO!';
+            if(modo === 'lag') msg.innerText = '⚡ TOUCH RESPONSIVO!';
+            if(modo === 'limpeza') msg.innerText = '🧹 CACHE LIMPO!';
+        }, 100);
     } else {
-        display.style.display = 'none';
+        box.style.display = 'none';
+        bar.style.width = '0%';
     }
 }
 </script>
